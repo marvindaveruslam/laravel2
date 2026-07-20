@@ -17,6 +17,7 @@ Route::get('/Login  ', [LoginController::class, 'Login']);
 
 
 
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
