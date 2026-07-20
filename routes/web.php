@@ -12,7 +12,10 @@ use Inertia\Inertia;
 Route::get('/', [ContohController::class, 'index']);
 Route::get('/About  ', [AboutController::class, 'index']);
 Route::get('/Try  ', [TryController::class, 'index']);
-Route::get('/Login  ', [LoginController::class, 'Login']);
+
+Route::get('/Login  ', [LoginController::class, 'index']);
+Route::post('/Login  ', [LoginController::class, 'proseslogin']);
+
 
 
 
