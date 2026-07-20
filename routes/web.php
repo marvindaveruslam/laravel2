@@ -11,12 +11,15 @@ use Inertia\Inertia;
 
 // Route publik
 Route::get('/', [ContohController::class, 'index']);
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/try', [TryController::class, 'index'])->name('try');
+Route::get('/About', [AboutController::class, 'index']);
+Route::get('/Try', [TryController::class, 'index']);
 
-// Route login
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'proseslogin'])->name('login.proses');
+// Route Login (pakai huruf besar 'L' sesuai dengan yang teman Anda buat)
+Route::get('/Login', [LoginController::class, 'index'])->name('login');
+Route::post('/Login', [LoginController::class, 'proseslogin'])->name('login.proses');
+
+// Route logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Route dashboard (dilindungi auth)
 Route::get('/dashboard', function () {
