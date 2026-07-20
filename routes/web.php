@@ -15,8 +15,8 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/try', [TryController::class, 'index'])->name('try');
 
 // Route login
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'proseslogin'])->name('login.proses');
+Route::get('/Login', [LoginController::class, 'index'])->name('Login');
+Route::post('Login', [LoginController::class, 'prosesLogin'])->name('Login.proses');
 
 // Route dashboard (dilindungi auth)
 Route::get('/dashboard', function () {
