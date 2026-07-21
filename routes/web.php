@@ -16,11 +16,6 @@ Route::get('/Try  ', [TryController::class, 'index']);
 Route::get('/Login  ', [LoginController::class, 'index']);
 Route::post('/Login  ', [LoginController::class, 'proseslogin']);
 
-
-
-
-
-
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
