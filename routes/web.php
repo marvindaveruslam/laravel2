@@ -5,6 +5,9 @@ use App\Http\Controllers\ContohController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\TryController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KomentarController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -15,6 +18,10 @@ Route::get('/try', [TryController::class, 'index'])->name('try');
 
 
 Route::get('j-login', [LoginController::class, 'index'])->name('Login');
+
+Route::resource('artikels', ArtikelController::class);
+Route::resource('kategoris', KategoriController::class);
+Route::resource('komentars', KomentarController::class);
 
 
 
