@@ -16,7 +16,6 @@ Route::get('/', [ContohController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/try', [TryController::class, 'index'])->name('try');
 
-<<<<<<< HEAD
 
 Route::get('j-login', [LoginController::class, 'index'])->name('Login');
 
@@ -26,8 +25,6 @@ Route::resource('komentars', KomentarController::class);
 
 
 
-=======
->>>>>>> 8f4e9ec3f9f7784a8b165485d9260d1b2d05bac0
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
