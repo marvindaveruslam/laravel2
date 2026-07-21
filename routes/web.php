@@ -9,21 +9,19 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// Route publik
 Route::get('/', [ContohController::class, 'index']);
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/try', [TryController::class, 'index'])->name('try');
 
-// Route login
-Route::get('/Login', [LoginController::class, 'index'])->name('Login');
+
+Route::get('j-login', [LoginController::class, 'index'])->name('Login');
 
 
-// Route dashboard (dilindungi auth)
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route profile (dilindungi auth)
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
