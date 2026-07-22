@@ -1,12 +1,6 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white shadow mb-6">
-            <div class="max-w-7xl mx-auto px-4 py-3">
-                <Link href="/artikels" class="text-gray-600 hover:text-blue-600">Kembali</Link>
-            </div>
-        </nav>
-
-        <div class="max-w-4xl mx-auto px-4">
+    <MainLayout>
+        <div class="max-w-4xl mx-auto px-4 py-6">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h1 class="text-3xl font-bold text-gray-800 mb-4">{{ artikel.judul }}</h1>
                 
@@ -21,11 +15,11 @@
                 </div>
 
                 <div class="mt-8 pt-6 border-t">
-                    <h3 class="text-xl font-semibold mb-4">Komentar ({{ artikel.komentars?.length || 0 }})</h3>
+                    <h3 class="text-xl font-semibold mb-4">Komentar ({{ artikel.komentar?.length || 0 }})</h3>
                     
-                    <div v-if="artikel.komentars && artikel.komentars.length > 0" class="space-y-4">
+                    <div v-if="artikel.komentar && artikel.komentar.length > 0" class="space-y-4">
                         <div 
-                            v-for="komentar in artikel.komentars" 
+                            v-for="komentar in artikel.komentar" 
                             :key="komentar.id" 
                             class="bg-gray-50 p-4 rounded-lg"
                         >
@@ -41,7 +35,7 @@
 
                 <div class="mt-6 flex gap-3">
                     <Link 
-                        :href="`/artikels/${artikel.id}/edit`" 
+                        :href="`/artikel/${artikel.id}/edit`" 
                         class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg"
                     >
                         Edit
@@ -55,11 +49,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </MainLayout>
 </template>
 
 <script setup>
 import { Link, router } from '@inertiajs/vue3'
+import MainLayout from '@/Layouts/MainLayout.vue'
 
 const props = defineProps({
     artikel: {
@@ -79,9 +74,9 @@ const formatDate = (date) => {
 
 const hapus = (id) => {
     if (confirm('Yakin ingin menghapus artikel ini?')) {
-        router.delete(`/artikels/${id}`, {
+        router.delete(`/artikel/${id}`, {
             onSuccess: () => {
-                window.location.href = '/artikels'
+                window.location.href = '/artikel'
             }
         })
     }

@@ -1,14 +1,8 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white shadow mb-6">
-            <div class="max-w-7xl mx-auto px-4 py-3">
-                <Link href="/artikels" class="text-gray-600 hover:text-blue-600">Kembali</Link>
-            </div>
-        </nav>
-
-        <div class="max-w-3xl mx-auto px-4">
+    <MainLayout>
+        <div class="max-w-3xl mx-auto px-4 py-6">
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">Edit Artikel</h2>
+                <h1 class="text-2xl font-bold text-gray-800 mb-6">Edit Artikel</h1>
 
                 <form @submit.prevent="update">
                     <div class="mb-4">
@@ -39,7 +33,7 @@
                         >
                             <option value="">Pilih Kategori</option>
                             <option 
-                                v-for="kategori in kategoris" 
+                                v-for="kategori in kategori" 
                                 :key="kategori.id" 
                                 :value="kategori.id"
                             >
@@ -57,7 +51,7 @@
                             {{ loading ? 'Menyimpan...' : 'Update' }}
                         </button>
                         <Link 
-                            href="/artikels" 
+                            href="/artikel" 
                             class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg"
                         >
                             Batal
@@ -70,19 +64,20 @@
                 </form>
             </div>
         </div>
-    </div>
+    </MainLayout>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { Link, router } from '@inertiajs/vue3'
+import MainLayout from '@/Layouts/MainLayout.vue'
 
 const props = defineProps({
     artikel: {
         type: Object,
         required: true
     },
-    kategoris: {
+    kategori: {
         type: Array,
         default: () => []
     }
@@ -101,7 +96,7 @@ const update = () => {
     loading.value = true
     errors.value = null
     
-    router.put(`/artikels/${props.artikel.id}`, form.value, {
+    router.put(`/artikel/${props.artikel.id}`, form.value, {
         onSuccess: () => {
             loading.value = false
             alert('Artikel berhasil diupdate')
