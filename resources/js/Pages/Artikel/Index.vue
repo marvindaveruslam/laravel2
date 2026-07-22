@@ -13,7 +13,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div 
-                    v-for="artikel in artikels" 
+                    v-for="artikel in artikel" 
                     :key="artikel.id" 
                     class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
                 >
@@ -30,13 +30,13 @@
                         </div>
                         <div class="mt-4 flex gap-2">
                             <Link 
-                                :href="`/artikels/${artikel.id}`" 
+                                :href="`/artikel/${artikel.id}`" 
                                 class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
                             >
                                 Detail
                             </Link>
                             <Link 
-                                :href="`/artikels/${artikel.id}/edit`" 
+                                :href="`/artikel/${artikel.id}/edit`" 
                                 class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded text-sm"
                             >
                                 Edit
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div v-if="!artikels || artikels.length === 0" class="text-center py-12">
+            <div v-if="!artikel || artikel.length === 0" class="text-center py-12">
                 <p class="text-gray-500">Belum ada artikel. Silakan tambahkan artikel pertama.</p>
             </div>
         </div>
@@ -64,7 +64,7 @@ import { Link, router } from '@inertiajs/vue3'
 import MainLayout from '@/Layouts/MainLayout.vue'
 
 const props = defineProps({
-    artikels: {
+    artikel: {
         type: Array,
         default: () => []
     }

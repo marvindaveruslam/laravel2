@@ -18,7 +18,7 @@
                         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
                             Simpan
                         </button>
-                        <Link href="/kategoris" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg">
+                        <Link href="/kategori" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg">
                             Batal
                         </Link>
                     </div>

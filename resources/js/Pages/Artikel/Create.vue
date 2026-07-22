@@ -35,7 +35,7 @@
                         >
                             <option value="">Pilih Kategori</option>
                             <option 
-                                v-for="kategori in kategoris" 
+                                v-for="kategori in kategori" 
                                 :key="kategori.id" 
                                 :value="kategori.id"
                             >
@@ -75,7 +75,7 @@ import { Link, router } from '@inertiajs/vue3'
 import MainLayout from '@/Layouts/MainLayout.vue'
 
 const props = defineProps({
-    kategoris: {
+    kategori: {
         type: Array,
         default: () => []
     }

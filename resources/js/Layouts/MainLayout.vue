@@ -14,21 +14,21 @@
                     <!-- Menu -->
                     <div class="flex items-center space-x-4">
                         <Link 
-                            href="/artikels" 
+                            href="/artikel" 
                             class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
                             :class="{ 'text-blue-600 border-b-2 border-blue-600': $page.component.startsWith('Artikel/') }"
                         >
                             Artikel
                         </Link>
                         <Link 
-                            href="/kategoris" 
+                            href="/kategori" 
                             class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
                             :class="{ 'text-blue-600 border-b-2 border-blue-600': $page.component.startsWith('Kategori/') }"
                         >
                             Kategori
                         </Link>
                         <Link 
-                            href="/komentars" 
+                            href="/komentar" 
                             class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
                             :class="{ 'text-blue-600 border-b-2 border-blue-600': $page.component.startsWith('Komentar/') }"
                         >

@@ -17,7 +17,7 @@
                         <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg">
                             Update
                         </button>
-                        <Link href="/kategoris" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg">
+                        <Link href="/kategori" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg">
                             Batal
                         </Link>
                     </div>

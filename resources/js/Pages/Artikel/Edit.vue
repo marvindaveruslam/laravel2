@@ -33,7 +33,7 @@
                         >
                             <option value="">Pilih Kategori</option>
                             <option 
-                                v-for="kategori in kategoris" 
+                                v-for="kategori in kategori" 
                                 :key="kategori.id" 
                                 :value="kategori.id"
                             >
@@ -51,7 +51,7 @@
                             {{ loading ? 'Menyimpan...' : 'Update' }}
                         </button>
                         <Link 
-                            href="/artikels" 
+                            href="/artikel" 
                             class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg"
                         >
                             Batal
@@ -77,7 +77,7 @@ const props = defineProps({
         type: Object,
         required: true
     },
-    kategoris: {
+    kategori: {
         type: Array,
         default: () => []
     }

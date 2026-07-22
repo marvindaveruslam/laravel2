@@ -15,11 +15,11 @@
                 </div>
 
                 <div class="mt-8 pt-6 border-t">
-                    <h3 class="text-xl font-semibold mb-4">Komentar ({{ artikel.komentars?.length || 0 }})</h3>
+                    <h3 class="text-xl font-semibold mb-4">Komentar ({{ artikel.komentar?.length || 0 }})</h3>
                     
-                    <div v-if="artikel.komentars && artikel.komentars.length > 0" class="space-y-4">
+                    <div v-if="artikel.komentar && artikel.komentar.length > 0" class="space-y-4">
                         <div 
-                            v-for="komentar in artikel.komentars" 
+                            v-for="komentar in artikel.komentar" 
                             :key="komentar.id" 
                             class="bg-gray-50 p-4 rounded-lg"
                         >
@@ -35,7 +35,7 @@
 
                 <div class="mt-6 flex gap-3">
                     <Link 
-                        :href="`/artikels/${artikel.id}/edit`" 
+                        :href="`/artikel/${artikel.id}/edit`" 
                         class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg"
                     >
                         Edit
@@ -76,7 +76,7 @@ const hapus = (id) => {
     if (confirm('Yakin ingin menghapus artikel ini?')) {
         router.delete(`/artikel/${id}`, {
             onSuccess: () => {
-                window.location.href = '/artikels'
+                window.location.href = '/artikel'
             }
         })
     }
