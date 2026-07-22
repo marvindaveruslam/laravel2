@@ -53,7 +53,7 @@
                             {{ loading ? 'Menyimpan...' : 'Simpan' }}
                         </button>
                         <Link 
-                            href="/artikels" 
+                            href="/artikel" 
                             class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg"
                         >
                             Batal
