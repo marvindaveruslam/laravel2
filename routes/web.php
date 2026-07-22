@@ -19,9 +19,9 @@ Route::get('/try', [TryController::class, 'index'])->name('try');
 
 Route::get('j-login', [LoginController::class, 'index'])->name('Login');
 
-Route::resource('artikels', ArtikelController::class);
-Route::resource('kategoris', KategoriController::class);
-Route::resource('komentars', KomentarController::class);
+Route::get('artikel', [ArtikelController::class, 'index']);
+Route::get('kategori', [KategoriController::class, 'index']);
+Route::get('komentar', [KomentarController::class, 'index']);
 
 
 

@@ -15,6 +15,6 @@ class ArtikelController extends Controller  // <-- Tambahkan { di sini
 {
     public function index()
     {
-        return Inertia::render('Artikel');
+        return Inertia::render('Artikel/Index');
     }
 }

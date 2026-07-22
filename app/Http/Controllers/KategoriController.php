@@ -15,6 +15,6 @@ class KategoriController extends Controller  // <-- Tambahkan { di sini
 {
     public function index()
     {
-        return Inertia::render('kategori');
+        return Inertia::render('Kategori/Index');
     }
 }

@@ -15,6 +15,6 @@ class KomentarController extends Controller  // <-- Tambahkan { di sini
 {
     public function index()
     {
-        return Inertia::render('komentar');
+        return Inertia::render('Komentar/Index');
     }
 }
