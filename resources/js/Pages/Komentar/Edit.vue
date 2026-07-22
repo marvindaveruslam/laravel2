@@ -41,7 +41,7 @@ const form = ref({
 })
 
 const update = () => {
-    router.put(`/komentars/${props.komentar.id}`, form.value, {
+    router.put(`/komentar/${props.komentar.id}`, form.value, {
         onSuccess: () => {
             alert('Komentar berhasil diupdate')
         }

@@ -41,7 +41,7 @@ const form = ref({
 })
 
 const update = () => {
-    router.put(`/kategoris/${props.kategori.id}`, form.value, {
+    router.put(`/kategori/${props.kategori.id}`, form.value, {
         onSuccess: () => {
             alert('Kategori berhasil diupdate')
         }

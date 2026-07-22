@@ -72,7 +72,7 @@ const props = defineProps({
 
 const hapus = (id) => {
     if (confirm('Yakin ingin menghapus artikel ini?')) {
-        router.delete(`/artikels/${id}`, {
+        router.delete(`/artikel/${id}`, {
             onSuccess: () => {
                 alert('Artikel berhasil dihapus')
             }

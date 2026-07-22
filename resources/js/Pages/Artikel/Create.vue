@@ -94,7 +94,7 @@ const simpan = () => {
     loading.value = true
     errors.value = null
     
-    router.post('/artikels', form.value, {
+    router.post('/artikel', form.value, {
         onSuccess: () => {
             loading.value = false
             form.value = { judul: '', isi: '', kategori_id: '' }

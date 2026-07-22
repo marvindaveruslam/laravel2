@@ -36,7 +36,7 @@ import MainLayout from '@/Layouts/MainLayout.vue'
 const form = ref({ nama: '' })
 
 const simpan = () => {
-    router.post('/kategoris', form.value, {
+    router.post('/kategori', form.value, {
         onSuccess: () => {
             form.value = { nama: '' }
             alert('Kategori berhasil ditambahkan')

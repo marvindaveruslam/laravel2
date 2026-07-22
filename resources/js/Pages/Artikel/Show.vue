@@ -74,7 +74,7 @@ const formatDate = (date) => {
 
 const hapus = (id) => {
     if (confirm('Yakin ingin menghapus artikel ini?')) {
-        router.delete(`/artikels/${id}`, {
+        router.delete(`/artikel/${id}`, {
             onSuccess: () => {
                 window.location.href = '/artikels'
             }

@@ -42,7 +42,7 @@ const props = defineProps({
 
 const hapus = (id) => {
     if (confirm('Yakin ingin menghapus komentar ini?')) {
-        router.delete(`/komentars/${id}`, {
+        router.delete(`/komentar/${id}`, {
             onSuccess: () => {
                 alert('Komentar berhasil dihapus')
             }

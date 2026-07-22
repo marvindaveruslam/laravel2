@@ -96,7 +96,7 @@ const update = () => {
     loading.value = true
     errors.value = null
     
-    router.put(`/artikels/${props.artikel.id}`, form.value, {
+    router.put(`/artikel/${props.artikel.id}`, form.value, {
         onSuccess: () => {
             loading.value = false
             alert('Artikel berhasil diupdate')

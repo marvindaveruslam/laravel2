@@ -38,7 +38,7 @@ const props = defineProps({
 
 const hapus = (id) => {
     if (confirm('Yakin ingin menghapus kategori ini?')) {
-        router.delete(`/kategoris/${id}`, {
+        router.delete(`/kategori/${id}`, {
             onSuccess: () => {
                 alert('Kategori berhasil dihapus')
             }

@@ -56,7 +56,7 @@ const form = ref({
 })
 
 const simpan = () => {
-    router.post('/komentars', form.value, {
+    router.post('/komentar', form.value, {
         onSuccess: () => {
             form.value = { isi: '', artikel_id: '' }
             alert('Komentar berhasil ditambahkan')
