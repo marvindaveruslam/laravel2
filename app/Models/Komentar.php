@@ -15,4 +15,20 @@ class Komentar extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    protected $fillable = [
+
+    'artikel_id',
+
+    'user_id',
+
+    'isi',
+
+    'parent_id',
+
+    'disetujui',
+
+    'likes'
+
+    ];
 }

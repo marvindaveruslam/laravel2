@@ -10,4 +10,18 @@ class Kategori extends Model
     {
         return $this->hasMany(Artikel::class);
     }
+
+    protected $fillable = [
+
+    'nama',
+
+    'slug',
+
+    'deskripsi',
+
+    'icon',
+
+    'is_active'
+
+];
 }

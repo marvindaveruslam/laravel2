@@ -16,8 +16,10 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
 
             // Guest comment
-            $table->string('nama_tamu')->nullable();
-            $table->string('email_tamu')->nullable();
+            $table
+                ->foreignId('user_id')
+                ->constrained()
+                ->onDelete('cascade');
 
             // Comment content
             $table->text('isi');
