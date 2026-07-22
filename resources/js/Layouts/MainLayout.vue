@@ -1,7 +1,7 @@
 <template>
     <div class="min-h-screen bg-gray-100">
         <!-- Navbar -->
-        <nav class="bg-white shadow-md">
+        <nav class="bg-white shadow-md">   
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <!-- Logo -->
@@ -13,22 +13,23 @@
 
                     <!-- Menu -->
                     <div class="flex items-center space-x-4">
+                        
                         <Link 
-                            href="/artikel" 
+                            :href="route('artikel')" 
                             class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
                             :class="{ 'text-blue-600 border-b-2 border-blue-600': $page.component.startsWith('Artikel/') }"
                         >
                             Artikel
                         </Link>
                         <Link 
-                            href="/kategori" 
+                            :href="route('kategori')" 
                             class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
                             :class="{ 'text-blue-600 border-b-2 border-blue-600': $page.component.startsWith('Kategori/') }"
                         >
                             Kategori
                         </Link>
                         <Link 
-                            href="/komentar" 
+                            :href="route('komentar')" 
                             class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
                             :class="{ 'text-blue-600 border-b-2 border-blue-600': $page.component.startsWith('Komentar/') }"
                         >
