@@ -12,7 +12,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [ContohController::class, 'index']);
+Route::get('/', [ContohController::class, 'index'])->name('beranda');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/try', [TryController::class, 'index'])->name('try');
 

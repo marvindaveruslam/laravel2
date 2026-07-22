@@ -6,7 +6,7 @@
                 <div class="flex justify-between h-16">
                     <!-- Logo -->
                     <div class="flex items-center">
-                        <Link href="/" class="text-xl font-bold text-gray-800">
+                        <Link :href="route('beranda')" class="text-xl font-bold text-gray-800">
                             MyApp
                         </Link>
                     </div>
