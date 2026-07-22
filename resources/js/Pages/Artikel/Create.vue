@@ -1,14 +1,8 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white shadow mb-6">
-            <div class="max-w-7xl mx-auto px-4 py-3">
-                <Link href="/artikels" class="text-gray-600 hover:text-blue-600">Kembali</Link>
-            </div>
-        </nav>
-
-        <div class="max-w-3xl mx-auto px-4">
+    <MainLayout>
+        <div class="max-w-3xl mx-auto px-4 py-6">
             <div class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-2xl font-bold text-gray-800 mb-6">Tambah Artikel Baru</h2>
+                <h1 class="text-2xl font-bold text-gray-800 mb-6">Tambah Artikel Baru</h1>
 
                 <form @submit.prevent="simpan">
                     <div class="mb-4">
@@ -72,12 +66,13 @@
                 </form>
             </div>
         </div>
-    </div>
+    </MainLayout>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import { Link, router } from '@inertiajs/vue3'
+import MainLayout from '@/Layouts/MainLayout.vue'
 
 const props = defineProps({
     kategoris: {

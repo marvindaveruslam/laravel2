@@ -1,6 +1,6 @@
 <template>
-    <div class="min-h-screen bg-gray-100 p-6">
-        <div class="max-w-4xl mx-auto">
+    <MainLayout>
+        <div class="max-w-4xl mx-auto px-4 py-6">
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h1 class="text-2xl font-bold text-gray-800">Daftar Komentar</h1>
@@ -29,11 +29,12 @@
                 <p v-else class="text-gray-500 text-center py-8">Belum ada komentar</p>
             </div>
         </div>
-    </div>
+    </MainLayout>
 </template>
 
 <script setup>
 import { Link, router } from '@inertiajs/vue3'
+import MainLayout from '@/Layouts/MainLayout.vue'
 
 const props = defineProps({
     komentars: Array

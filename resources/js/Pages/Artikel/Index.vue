@@ -1,22 +1,11 @@
 <template>
-    <div class="min-h-screen bg-gray-100">
-        <nav class="bg-white shadow mb-6">
-            <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between">
-                <h1 class="text-xl font-bold text-gray-800">Manajemen Artikel</h1>
-                <div class="flex gap-4">
-                    <Link href="/artikels" class="text-gray-600 hover:text-blue-600">Artikel</Link>
-                    <Link href="/kategoris" class="text-gray-600 hover:text-blue-600">Kategori</Link>
-                    <Link href="/komentars" class="text-gray-600 hover:text-blue-600">Komentar</Link>
-                </div>
-            </div>
-        </nav>
-
-        <div class="max-w-7xl mx-auto px-4">
+    <MainLayout>
+        <div class="max-w-7xl mx-auto px-4 py-6">
             <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-gray-800">Daftar Artikel</h2>
+                <h1 class="text-2xl font-bold text-gray-800">Daftar Artikel</h1>
                 <Link 
                     href="/artikels/create" 
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg"
                 >
                     Tambah Artikel
                 </Link>
@@ -36,8 +25,8 @@
                             {{ artikel.isi || 'Belum ada isi' }}
                         </p>
                         <div class="flex justify-between items-center text-sm text-gray-500">
-                            <span>Kategori: {{ artikel.kategori?.nama || 'Tanpa Kategori' }}</span>
-                            <span>User: {{ artikel.user?.name || 'Unknown' }}</span>
+                            <span>Kategori: {{ artikel.kategori?.nama || '-' }}</span>
+                            <span>User: {{ artikel.user?.name || '-' }}</span>
                         </div>
                         <div class="mt-4 flex gap-2">
                             <Link 
@@ -67,11 +56,12 @@
                 <p class="text-gray-500">Belum ada artikel. Silakan tambahkan artikel pertama.</p>
             </div>
         </div>
-    </div>
+    </MainLayout>
 </template>
 
 <script setup>
 import { Link, router } from '@inertiajs/vue3'
+import MainLayout from '@/Layouts/MainLayout.vue'
 
 const props = defineProps({
     artikels: {
@@ -83,7 +73,6 @@ const props = defineProps({
 const hapus = (id) => {
     if (confirm('Yakin ingin menghapus artikel ini?')) {
         router.delete(`/artikels/${id}`, {
-
             onSuccess: () => {
                 alert('Artikel berhasil dihapus')
             }
