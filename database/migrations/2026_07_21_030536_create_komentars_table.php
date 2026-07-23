@@ -13,13 +13,7 @@ return new class extends Migration
 
             // Foreign keys
             $table->foreignId('artikel_id')->constrained('artikels')->onDelete('cascade');
-            $table->foreignId('user_id')->nullable()->constrained('users')->onDelete('set null');
-
-            // Guest comment
-            $table
-                ->foreignId('user_id')
-                ->constrained()
-                ->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
 
             // Comment content
             $table->text('isi');

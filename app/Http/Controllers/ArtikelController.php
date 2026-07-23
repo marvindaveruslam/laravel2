@@ -102,6 +102,10 @@ class ArtikelController extends Controller
             'kategori_id' => 'required|exists:kategoris,id',
         ]);
 
+        if ($artikel->user_id != Auth::id()) {
+            abort(403);
+        }
+
         $artikel->update([
             'judul' => $request->judul,
             'slug' => \Illuminate\Support\Str::slug($request->judul),
